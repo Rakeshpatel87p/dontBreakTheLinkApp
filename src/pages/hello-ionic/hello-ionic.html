@@ -2,11 +2,7 @@
     <ion-navbar color="primary">
         <ion-title>{{viewTitle}}</ion-title>
         <ion-buttons end>
-            <button ion-button [disabled]="isToday" (click)="today()">Today</button>
-            <button ion-button (click)="changeMode('month')">M</button>
-            <button ion-button (click)="changeMode('week')">W</button>
-            <button ion-button (click)="changeMode('day')">D</button>
-            <button ion-button (click)="loadEvents()">Load Events</button>
+            <button ion-button (click)="loadEvents()">Load Work Data</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>

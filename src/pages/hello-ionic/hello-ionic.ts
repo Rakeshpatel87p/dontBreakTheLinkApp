@@ -32,6 +32,14 @@ export class HelloIonicPage {
         this.calendar.currentDate = new Date();
     }
     onTimeSelected(ev) {
+        var events = [];
+        events.push({
+                    title: 'Event - ' + i,
+                    startTime: 10,
+                    endTime: endTime,
+                    allDay: false
+                });
+        console.log('this be ev ', ev);
         console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' +
             (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
     }
