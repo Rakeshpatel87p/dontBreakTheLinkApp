@@ -34,14 +34,16 @@ export class HelloIonicPage {
     onTimeSelected(ev) {
         var events = [];
         events.push({
-                    title: 'Event - ' + i,
-                    startTime: 10,
-                    endTime: endTime,
-                    allDay: false
+                    title: 'Test',
+                    startTime: ev.selectedTime,
+                    endTime: ev.selectedTime,
+                    allDay: true
                 });
         console.log('this be ev ', ev);
         console.log('Selected time: ' + ev.selectedTime + ', hasEvents: ' +
-            (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
+        (ev.events !== undefined && ev.events.length !== 0) + ', disabled: ' + ev.disabled);
+        console.log(events);
+        return events;
     }
     onCurrentDateChanged(event:Date) {
         var today = new Date();
@@ -50,7 +52,7 @@ export class HelloIonicPage {
         this.isToday = today.getTime() === event.getTime();
     }
     createRandomEvents() {
-        var events = [];
+       	var events = [];
         for (var i = 0; i < 50; i += 1) {
             var date = new Date();
             var eventType = Math.floor(Math.random() * 2);
@@ -68,7 +70,7 @@ export class HelloIonicPage {
                     title: 'All Day - ' + i,
                     startTime: startTime,
                     endTime: endTime,
-                    allDay: true
+                    allDay: true                
                 });
             } else {
                 var startMinute = Math.floor(Math.random() * 24 * 60);
@@ -79,7 +81,8 @@ export class HelloIonicPage {
                     title: 'Event - ' + i,
                     startTime: startTime,
                     endTime: endTime,
-                    allDay: false
+                    allDay: false,
+                    autoSelect: true
                 });
             }
         }
